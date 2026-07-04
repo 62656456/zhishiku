@@ -110,8 +110,8 @@ flowchart LR
 ├── README.md
 ├── LICENSE
 ├── assets/
-│   ├── ai-storyboard-director-banner.svg
-│   └── workflow.svg
+│   ├── ai-storyboard-director-banner.png
+│   └── workflow.png
 └── ai-storyboard-director5.2/
     ├── README.md
     ├── ai-storyboard-director5.2.skill
