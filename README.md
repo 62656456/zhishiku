@@ -1,51 +1,131 @@
-# AI Storyboard Director v5.2
+<p align="center">
+  <img src="assets/ai-storyboard-director-banner.svg" alt="AI Storyboard Director v5.2 banner" width="100%">
+</p>
 
-AI Storyboard Director v5.2 是一个面向 AIGC 视频创作的导演级分镜技能。它把剧本拆解为可审查、可修改、可交给视频生成工具执行的镜头链，适合短片、短剧、广告片、概念片和 Agent 自动化分镜工作流。
+<h1 align="center">AI Storyboard Director v5.2</h1>
 
-## 它解决什么问题
+<p align="center">
+  Director-grade AIGC storyboard skill for turning scripts into executable shot chains.
+</p>
 
-很多分镜工具只是把剧本文字按段落切开，结果看起来像镜头清单，实际缺少导演判断。AI Storyboard Director v5.2 的核心是先建立“导演脑”：判断故事终点、人物关系、情绪路径、视觉概念、剪辑动机和生成可行性，再输出分镜。
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg"></a>
+  <img alt="Version" src="https://img.shields.io/badge/version-v5.2-blue.svg">
+  <img alt="Language" src="https://img.shields.io/badge/language-Chinese%20%2F%20English-lightgrey.svg">
+  <img alt="Use case" src="https://img.shields.io/badge/AIGC-video%20storyboard-orange.svg">
+</p>
 
-它尤其适合这些场景：
+AI Storyboard Director v5.2 是一个面向 AIGC 视频创作的导演级分镜技能。它不是把剧本文字机械切段，而是先读懂剧情、人物、情绪和视觉概念，再生成可审查、可修改、可交给下游视频生成工具执行的镜头链。
 
-- 把剧本转换成 AIGC 视频生成前的镜头方案
-- 为即梦、可灵、Runway、Pika、Seedance 等工具准备分镜级提示词基础
-- 审查已有分镜是否存在连续性、导播病、不可生成描述或剧本文字搬运
-- 在 Agent 工作流里作为“剧本 → 分镜 → 提示词 → 视频”的前置导演模块
+适合短片、短剧、广告片、概念片、影视预演，以及“剧本 → 分镜 → 提示词 → 视频”的 Agent 自动化工作流。
 
-## 核心功能
+## Why This Exists
 
-- **导演决策骨架**：先读懂剧本，再定终点、立概念、切节拍、设计镜头链。
-- **视觉概念前置**：每章强制锁定视觉概念、母题、空间权力几何、反常规决定和风格坐标。
-- **双速交付**：先输出给人拍板的设计稿，再展开给机器执行的生产稿。
-- **AG-CLIP 镜头链**：每镜是一个连续 take，内部无硬切，镜头之间用剪辑动机连接。
-- **受控输出契约**：用固定字段、受控词表和自检规则保证下游可解析。
-- **审查模式**：可检查已有分镜，指出结构、连续性、生成可行性和创造性问题。
-- **小模型可用**：提供精编单文件版，适合上下文较短的模型快速执行。
+很多“剧本转分镜”提示词会把自然段、台词行或剧情动作直接切成镜头，结果常见三类问题：
 
-## 仓库内容
+- **像导播，不像导演**：开场远景、对话过肩互切、情绪切特写，整套方案谁来做都一样。
+- **看起来完整，下游难用**：有情绪形容和导演散文，但缺少可生成的物理事实。
+- **局部合格，整章平庸**：每个镜头都没错，连起来没有视觉主意、母题演变和剪辑节奏。
 
-| 路径 | 说明 |
-|---|---|
-| `技能学习/ai-storyboard-director5.2/ai-storyboard-director5.2.skill` | 可导入的技能包 |
-| `技能学习/ai-storyboard-director5.2/ai-storyboard-director5.2-全量单文件.md` | 全量自包含版，包含主指令、知识库和示范集 |
-| `技能学习/ai-storyboard-director5.2/ai-storyboard-director5.2-精编单文件.md` | 精编单文件版，适合小上下文模型 |
-| `技能学习/ai-storyboard-director5.2/README.md` | 技能包详细说明 |
+v5.2 的核心修正是“导演脑前置”：先锁定本章视觉概念，再拆镜头。输出时保留结构化决策痕迹，但不把散文思考塞进生产稿。
 
-## 快速开始
+## What It Does
 
-### 使用 `.skill` 技能包
+- **Script reading**：按情节、人物、情绪三层理解剧本。
+- **Destination-first design**：先设计观众最终带走的信息/情绪，再倒推镜头路径。
+- **Visual concept lock**：强制定义视觉概念、母题、空间权力几何、反常规决定和风格坐标。
+- **Two-pass delivery**：默认先出设计稿给人拍板，再展开生产稿给机器执行。
+- **AG-CLIP shot chain**：每个镜头是一个连续 take，镜头之间用受控剪辑动机连接。
+- **AIGC-safe output**：生产稿只保留可拍、可生成、可校验的物理事实。
+- **Review mode**：可审查已有分镜，定位连续性、导播病、不可生成描述和原文搬运等问题。
 
-将 `ai-storyboard-director5.2.skill` 导入支持技能包的 Agent 环境，然后发送剧本并要求“拆分镜”。默认流程会先给出设计稿，确认后再展开生产稿。
+<p align="center">
+  <img src="assets/workflow.svg" alt="AI Storyboard Director workflow" width="92%">
+</p>
 
-### 使用单文件版
+## Choose Your File
 
-把全量版或精编版 Markdown 整体作为系统提示词或对话首条消息，然后发送剧本并要求“拆分镜”。
+| File | Best for | How to use |
+|---|---|---|
+| [`ai-storyboard-director5.2.skill`](ai-storyboard-director5.2/ai-storyboard-director5.2.skill) | Codex / Agent environments that support skill packages | Import the skill package, then send a script and ask for storyboard splitting |
+| [`ai-storyboard-director5.2-全量单文件.md`](ai-storyboard-director5.2/ai-storyboard-director5.2-%E5%85%A8%E9%87%8F%E5%8D%95%E6%96%87%E4%BB%B6.md) | Long-context models and full-depth reasoning | Paste the whole file as system prompt or first message |
+| [`ai-storyboard-director5.2-精编单文件.md`](ai-storyboard-director5.2/ai-storyboard-director5.2-%E7%B2%BE%E7%BC%96%E5%8D%95%E6%96%87%E4%BB%B6.md) | Smaller-context models and fast runs | Paste the compact file as system prompt or first message |
 
-- 需要完整知识深度：使用全量单文件版
-- 需要轻量快速执行：使用精编单文件版
+## Quick Start
 
-## 开源协议
+### 1. Use the full standalone version
 
-本仓库采用 MIT License 开源。你可以自由使用、复制、修改、分发和二次开发，但请保留许可声明。
+Open [`ai-storyboard-director5.2-全量单文件.md`](ai-storyboard-director5.2/ai-storyboard-director5.2-%E5%85%A8%E9%87%8F%E5%8D%95%E6%96%87%E4%BB%B6.md), copy the whole content into your model as the system prompt, then send:
 
+```text
+下面是剧本。请先按 v5.2 默认流程输出设计稿，等我确认后再展开生产稿。
+
+<粘贴你的剧本>
+```
+
+### 2. Use the compact version
+
+For a smaller model or a fast draft, use [`ai-storyboard-director5.2-精编单文件.md`](ai-storyboard-director5.2/ai-storyboard-director5.2-%E7%B2%BE%E7%BC%96%E5%8D%95%E6%96%87%E4%BB%B6.md):
+
+```text
+使用精编版规则拆分镜。先给设计稿，镜头表保持简洁。
+
+<粘贴你的剧本>
+```
+
+### 3. Use review mode
+
+Send an existing storyboard and ask:
+
+```text
+请进入审查模式，检查这份分镜是否存在导播病、连续性问题、不可生成描述和输出契约缺漏，并给出修正版。
+```
+
+## Output Modes
+
+| Mode | Reader | Purpose |
+|---|---|---|
+| Design draft | Human | See the idea quickly: concept, motif, spatial strategy, thin shot table |
+| Production draft | Machine / downstream agent | Full structured AG-CLIP shot list with physical facts and continuity anchors |
+| Review report | Creator / editor | Diagnose and repair an existing storyboard |
+
+## Example Workflow
+
+```mermaid
+flowchart LR
+  A[Script] --> B[Read plot, character, emotion]
+  B --> C[Lock visual concept]
+  C --> D[Design draft]
+  D --> E{Human approval}
+  E -->|Revise| C
+  E -->|Approved| F[Production draft]
+  F --> G[Prompt engineering / video generation]
+  F --> H[Review mode QA]
+```
+
+## Repository Structure
+
+```text
+.
+├── README.md
+├── LICENSE
+├── assets/
+│   ├── ai-storyboard-director-banner.svg
+│   └── workflow.svg
+└── ai-storyboard-director5.2/
+    ├── README.md
+    ├── ai-storyboard-director5.2.skill
+    ├── ai-storyboard-director5.2-全量单文件.md
+    └── ai-storyboard-director5.2-精编单文件.md
+```
+
+## Design Principles
+
+- **Director first, operator second**：先判断“这一章作为画面是什么主意”，再拆镜头。
+- **Physical facts over prose**：生产稿拒绝比喻和情绪散文，保留下游能执行的可见事实。
+- **Continuity by contract**：入口引用、出口状态、锚点和剪辑动机让镜头链可审查。
+- **Creative ceiling + safety floor**：铁律和自检防错，概念层防平庸。
+
+## License
+
+MIT License. You can use, copy, modify, distribute, and build on this project, as long as the license notice is preserved.
