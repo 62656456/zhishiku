@@ -1,0 +1,36 @@
+<svg width="1280" height="520" viewBox="0 0 1280 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="520" fill="#101418"/>
+  <rect x="64" y="64" width="1152" height="392" rx="28" fill="#171D22" stroke="#2B3740"/>
+  <rect x="104" y="104" width="372" height="272" rx="18" fill="#0D1117" stroke="#31404A"/>
+  <rect x="126" y="128" width="328" height="184" rx="10" fill="#202830"/>
+  <path d="M126 260L212 190L278 236L332 172L454 278V312H126V260Z" fill="#384956"/>
+  <circle cx="392" cy="164" r="32" fill="#F5C45E"/>
+  <rect x="126" y="334" width="136" height="14" rx="7" fill="#5CD6C0"/>
+  <rect x="278" y="334" width="96" height="14" rx="7" fill="#E6EDF3"/>
+  <rect x="104" y="398" width="108" height="18" rx="9" fill="#F5C45E"/>
+  <rect x="232" y="398" width="108" height="18" rx="9" fill="#5CD6C0"/>
+  <rect x="360" y="398" width="116" height="18" rx="9" fill="#C778DD"/>
+  <path d="M548 170H814" stroke="#5CD6C0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M548 230H760" stroke="#F5C45E" stroke-width="3" stroke-linecap="round"/>
+  <path d="M548 290H862" stroke="#C778DD" stroke-width="3" stroke-linecap="round"/>
+  <path d="M548 350H738" stroke="#E6EDF3" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="522" cy="170" r="8" fill="#5CD6C0"/>
+  <circle cx="522" cy="230" r="8" fill="#F5C45E"/>
+  <circle cx="522" cy="290" r="8" fill="#C778DD"/>
+  <circle cx="522" cy="350" r="8" fill="#E6EDF3"/>
+  <rect x="930" y="110" width="216" height="54" rx="14" fill="#25313A" stroke="#3C4B55"/>
+  <rect x="930" y="190" width="216" height="54" rx="14" fill="#25313A" stroke="#3C4B55"/>
+  <rect x="930" y="270" width="216" height="54" rx="14" fill="#25313A" stroke="#3C4B55"/>
+  <rect x="930" y="350" width="216" height="54" rx="14" fill="#25313A" stroke="#3C4B55"/>
+  <path d="M874 228C910 228 910 137 930 137" stroke="#5CD6C0" stroke-width="3" fill="none"/>
+  <path d="M874 260C912 260 912 217 930 217" stroke="#F5C45E" stroke-width="3" fill="none"/>
+  <path d="M874 292C912 292 912 297 930 297" stroke="#C778DD" stroke-width="3" fill="none"/>
+  <path d="M874 324C912 324 912 377 930 377" stroke="#E6EDF3" stroke-width="3" fill="none"/>
+  <text x="104" y="82" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="18">AI VIDEO / STORYBOARD / AGENT SKILL</text>
+  <text x="520" y="126" fill="#F0F6FC" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">AI Storyboard Director v5.2</text>
+  <text x="520" y="394" fill="#8B949E" font-family="Segoe UI, Arial, sans-serif" font-size="22">Script understanding → visual concept → AG-CLIP shot chain → executable production draft</text>
+  <text x="966" y="144" fill="#F0F6FC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Read script</text>
+  <text x="966" y="224" fill="#F0F6FC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Lock concept</text>
+  <text x="966" y="304" fill="#F0F6FC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Build shots</text>
+  <text x="966" y="384" fill="#F0F6FC" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Audit output</text>
+</svg>
