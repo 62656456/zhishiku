@@ -1,0 +1,44 @@
+<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="360" fill="#F6F8FA"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="60" y="58" fill="#24292F" font-size="28" font-weight="700">Default workflow</text>
+    <text x="60" y="88" fill="#57606A" font-size="16">Two-pass delivery: approve the idea first, then expand the executable shot list.</text>
+  </g>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1F2328" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="60" y="132" width="190" height="120" rx="14" fill="#FFFFFF" stroke="#D0D7DE"/>
+    <rect x="300" y="132" width="190" height="120" rx="14" fill="#FFFFFF" stroke="#D0D7DE"/>
+    <rect x="540" y="132" width="190" height="120" rx="14" fill="#FFFFFF" stroke="#D0D7DE"/>
+    <rect x="780" y="132" width="190" height="120" rx="14" fill="#FFFFFF" stroke="#D0D7DE"/>
+    <rect x="1020" y="132" width="120" height="120" rx="14" fill="#FFFFFF" stroke="#D0D7DE"/>
+  </g>
+  <path d="M250 192H294" stroke="#57606A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M490 192H534" stroke="#57606A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M730 192H774" stroke="#57606A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M970 192H1014" stroke="#57606A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M286 184L294 192L286 200" stroke="#57606A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M526 184L534 192L526 200" stroke="#57606A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M766 184L774 192L766 200" stroke="#57606A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1006 184L1014 192L1006 200" stroke="#57606A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="88" y="178" fill="#24292F" font-size="20" font-weight="700">1. Script</text>
+    <text x="88" y="210" fill="#57606A" font-size="14">Plot, character,</text>
+    <text x="88" y="230" fill="#57606A" font-size="14">emotion reading</text>
+    <text x="328" y="178" fill="#24292F" font-size="20" font-weight="700">2. Concept</text>
+    <text x="328" y="210" fill="#57606A" font-size="14">Visual idea, motif,</text>
+    <text x="328" y="230" fill="#57606A" font-size="14">power geometry</text>
+    <text x="568" y="178" fill="#24292F" font-size="20" font-weight="700">3. Design draft</text>
+    <text x="568" y="210" fill="#57606A" font-size="14">Human-readable</text>
+    <text x="568" y="230" fill="#57606A" font-size="14">shot strategy</text>
+    <text x="808" y="178" fill="#24292F" font-size="20" font-weight="700">4. Production</text>
+    <text x="808" y="210" fill="#57606A" font-size="14">Executable AG-CLIP</text>
+    <text x="808" y="230" fill="#57606A" font-size="14">shot chain</text>
+    <text x="1044" y="178" fill="#24292F" font-size="20" font-weight="700">5. QA</text>
+    <text x="1044" y="210" fill="#57606A" font-size="14">Audit &</text>
+    <text x="1044" y="230" fill="#57606A" font-size="14">revise</text>
+  </g>
+</svg>
