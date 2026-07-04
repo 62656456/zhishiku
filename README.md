@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/ai-storyboard-director-banner.svg" alt="AI Storyboard Director v5.2 banner" width="100%">
+  <img src="assets/ai-storyboard-director-banner.png" alt="AI Storyboard Director v5.2 banner" width="100%">
 </p>
 
 <h1 align="center">AI Storyboard Director v5.2</h1>
@@ -40,7 +40,7 @@ v5.2 的核心修正是“导演脑前置”：先锁定本章视觉概念，再
 - **Review mode**：可审查已有分镜，定位连续性、导播病、不可生成描述和原文搬运等问题。
 
 <p align="center">
-  <img src="assets/workflow.svg" alt="AI Storyboard Director workflow" width="92%">
+  <img src="assets/workflow.png" alt="AI Storyboard Director workflow" width="92%">
 </p>
 
 ## Choose Your File
