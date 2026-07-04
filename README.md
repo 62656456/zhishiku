@@ -13,11 +13,32 @@
   <img alt="Version" src="https://img.shields.io/badge/version-v5.2-blue.svg">
   <img alt="Language" src="https://img.shields.io/badge/language-Chinese%20%2F%20English-lightgrey.svg">
   <img alt="Use case" src="https://img.shields.io/badge/AIGC-video%20storyboard-orange.svg">
+  <img alt="Status" src="https://img.shields.io/badge/status-open%20source-brightgreen.svg">
 </p>
 
 AI Storyboard Director v5.2 是一个面向 AIGC 视频创作的导演级分镜技能。它不是把剧本文字机械切段，而是先读懂剧情、人物、情绪和视觉概念，再生成可审查、可修改、可交给下游视频生成工具执行的镜头链。
 
 适合短片、短剧、广告片、概念片、影视预演，以及“剧本 → 分镜 → 提示词 → 视频”的 Agent 自动化工作流。
+
+<p align="center">
+  <a href="ai-storyboard-director5.2/ai-storyboard-director5.2-%E5%85%A8%E9%87%8F%E5%8D%95%E6%96%87%E4%BB%B6.md"><b>Start with Full Version</b></a>
+  ·
+  <a href="ai-storyboard-director5.2/ai-storyboard-director5.2-%E7%B2%BE%E7%BC%96%E5%8D%95%E6%96%87%E4%BB%B6.md"><b>Use Compact Version</b></a>
+  ·
+  <a href="ai-storyboard-director5.2/ai-storyboard-director5.2.skill"><b>Download Skill Package</b></a>
+</p>
+
+## Contents
+
+- [Why This Exists](#why-this-exists)
+- [What It Does](#what-it-does)
+- [Choose Your File](#choose-your-file)
+- [30-Second Start](#30-second-start)
+- [Quick Start](#quick-start)
+- [Output Modes](#output-modes)
+- [Example Workflow](#example-workflow)
+- [Repository Structure](#repository-structure)
+- [Search Keywords](#search-keywords)
 
 ## Why This Exists
 
@@ -31,13 +52,18 @@ v5.2 的核心修正是“导演脑前置”：先锁定本章视觉概念，再
 
 ## What It Does
 
-- **Script reading**：按情节、人物、情绪三层理解剧本。
-- **Destination-first design**：先设计观众最终带走的信息/情绪，再倒推镜头路径。
-- **Visual concept lock**：强制定义视觉概念、母题、空间权力几何、反常规决定和风格坐标。
-- **Two-pass delivery**：默认先出设计稿给人拍板，再展开生产稿给机器执行。
-- **AG-CLIP shot chain**：每个镜头是一个连续 take，镜头之间用受控剪辑动机连接。
-- **AIGC-safe output**：生产稿只保留可拍、可生成、可校验的物理事实。
-- **Review mode**：可审查已有分镜，定位连续性、导播病、不可生成描述和原文搬运等问题。
+<table>
+  <tr>
+    <td><b>Script Reading</b><br>按情节、人物、情绪三层理解剧本，不按自然段粗暴切镜。</td>
+    <td><b>Visual Concept Lock</b><br>先锁视觉概念、母题、空间权力几何和反常规决定。</td>
+    <td><b>Two-Pass Delivery</b><br>先给人看的设计稿，再展开机器可执行的生产稿。</td>
+  </tr>
+  <tr>
+    <td><b>AG-CLIP Shot Chain</b><br>每个镜头是一个连续 take，镜头之间有受控剪辑动机。</td>
+    <td><b>AIGC-Safe Output</b><br>生产稿只保留可拍、可生成、可校验的物理事实。</td>
+    <td><b>Review Mode</b><br>检查导播病、连续性、不可生成描述和原文搬运。</td>
+  </tr>
+</table>
 
 <p align="center">
   <img src="assets/workflow.png" alt="AI Storyboard Director workflow" width="92%">
@@ -50,6 +76,17 @@ v5.2 的核心修正是“导演脑前置”：先锁定本章视觉概念，再
 | [`ai-storyboard-director5.2.skill`](ai-storyboard-director5.2/ai-storyboard-director5.2.skill) | Codex / Agent environments that support skill packages | Import the skill package, then send a script and ask for storyboard splitting |
 | [`ai-storyboard-director5.2-全量单文件.md`](ai-storyboard-director5.2/ai-storyboard-director5.2-%E5%85%A8%E9%87%8F%E5%8D%95%E6%96%87%E4%BB%B6.md) | Long-context models and full-depth reasoning | Paste the whole file as system prompt or first message |
 | [`ai-storyboard-director5.2-精编单文件.md`](ai-storyboard-director5.2/ai-storyboard-director5.2-%E7%B2%BE%E7%BC%96%E5%8D%95%E6%96%87%E4%BB%B6.md) | Smaller-context models and fast runs | Paste the compact file as system prompt or first message |
+
+## 30-Second Start
+
+1. Open the [full standalone file](ai-storyboard-director5.2/ai-storyboard-director5.2-%E5%85%A8%E9%87%8F%E5%8D%95%E6%96%87%E4%BB%B6.md) or the [compact standalone file](ai-storyboard-director5.2/ai-storyboard-director5.2-%E7%B2%BE%E7%BC%96%E5%8D%95%E6%96%87%E4%BB%B6.md).
+2. Paste the whole file into your model as the system prompt or first message.
+3. Send your script with this instruction:
+
+```text
+请按 AI Storyboard Director v5.2 默认流程拆分镜。
+先给设计稿，我确认后再展开生产稿。
+```
 
 ## Quick Start
 
@@ -89,6 +126,28 @@ Send an existing storyboard and ask:
 | Production draft | Machine / downstream agent | Full structured AG-CLIP shot list with physical facts and continuity anchors |
 | Review report | Creator / editor | Diagnose and repair an existing storyboard |
 
+## Output Preview
+
+```text
+# 设计稿：<章/场标题>
+视觉概念：<一句可证伪、专属、能派生镜头的画面主意>
+母题：建立(镜N) → 变奏(镜M) → 打破/兑现(镜K)
+空间几何：<谁大谁小、谁压谁、转折点如何翻转>
+反常规决定：拒绝 <默认拍法> → 改为 <替代方案>
+薄镜头表：镜号 / 时长 / 景别运镜 / 画面一句 / 概念作用
+```
+
+```text
+# 生产稿：<章/场标题>
+AG-CLIP-001
+入口引用：
+出口状态：
+景别 / 机位 / 运镜 / 光色 / 声音：
+内部时间线：
+剪辑动机：
+翻车点与规避：
+```
+
 ## Example Workflow
 
 ```mermaid
@@ -118,6 +177,10 @@ flowchart LR
     ├── ai-storyboard-director5.2-全量单文件.md
     └── ai-storyboard-director5.2-精编单文件.md
 ```
+
+## Search Keywords
+
+AI storyboard, AI storyboard generator, AIGC video storyboard, script to storyboard, cinematic shot list, video generation prompt, prompt engineering, agent skill, film directing, screenwriting, 分镜, AI 分镜, 剧本转分镜, AIGC 视频, 视频生成提示词。
 
 ## Design Principles
 
