@@ -6,6 +6,8 @@
 ![AIGC](https://img.shields.io/badge/AIGC-video%20storyboard-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+> Project homepage: [AI Storyboard Director v5.2](https://github.com/62656456/ai-storyboard-director-v5.2)
+
 ## 这个技能适合谁
 
 - AIGC 视频创作者：把剧本变成可投喂视频生成工具的镜头方案。
@@ -17,9 +19,11 @@
 
 | 文件 | 用途 | 适合场景 |
 |---|---|---|
-| `ai-storyboard-director5.2.skill` | 可安装技能包，内含主技能、知识库和示范资产 | Codex/Agent 技能环境 |
-| `ai-storyboard-director5.2-全量单文件.md` | 完整自包含版，内联主指令、知识库和示范集 | 长上下文模型、正式分镜、需要完整知识深度 |
-| `ai-storyboard-director5.2-精编单文件.md` | 小上下文精编版，保留输出契约、铁律、受控词表和核心决策程序 | 快速草案、小模型、轻量工作流 |
+| [`ai-storyboard-director5.2.skill`](ai-storyboard-director5.2.skill) | 可安装技能包，内含主技能、知识库和示范资产 | Codex/Agent 技能环境 |
+| [`ai-storyboard-director5.2-全量单文件.md`](ai-storyboard-director5.2-全量单文件.md) | 完整自包含版，内联主指令、知识库和示范集 | 长上下文模型、正式分镜、需要完整知识深度 |
+| [`ai-storyboard-director5.2-精编单文件.md`](ai-storyboard-director5.2-精编单文件.md) | 小上下文精编版，保留输出契约、铁律、受控词表和核心决策程序 | 快速草案、小模型、轻量工作流 |
+
+不知道先用哪个：优先打开 **全量单文件版**；如果模型上下文不够，再换 **精编单文件版**。
 
 ## 快速上手
 
